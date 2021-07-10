@@ -9,21 +9,21 @@ import (
 // length- quantity of operations in expression
 func GenerateExpression(length int) string {
 	rand.Seed(time.Now().UnixNano())
-	builder := strings.Builder{}
+	var builder = strings.Builder{}
 
-	generate := func(str string) string {
+	var generate = func(str string) string {
 		return string(str[rand.Intn(len(str))])
 	}
-	IsSpace := func() string {
+	var isSpace = func() string {
 		if rand.Intn(2) == 0 {
 			return ""
 		}
 		return " "
 	}
 	var edger = func(str string) {
-		builder.WriteString(IsSpace())
+		builder.WriteString(isSpace())
 		builder.WriteString(str)
-		builder.WriteString(IsSpace())
+		builder.WriteString(isSpace())
 	}
 	var operand = func() {
 		var operands = "0123456789"
