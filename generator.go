@@ -10,10 +10,6 @@ import (
 func GenerateExpression(length int) string {
 	rand.Seed(time.Now().UnixNano())
 	builder := strings.Builder{}
-	var (
-		operators = "+-"
-		operands  = "0123456789"
-	)
 
 	generate := func(str string) string {
 		return string(str[rand.Intn(len(str))])
@@ -24,15 +20,17 @@ func GenerateExpression(length int) string {
 		}
 		return " "
 	}
-	edger := func(str string) {
+	var edger = func(str string) {
 		builder.WriteString(IsSpace())
 		builder.WriteString(str)
 		builder.WriteString(IsSpace())
 	}
-	operand := func() {
+	var operand = func() {
+		var operands = "0123456789"
 		edger(generate(operands))
 	}
-	operator := func() {
+	var operator = func() {
+		var operators = "+-"
 		edger(generate(operators))
 	}
 	operand()
