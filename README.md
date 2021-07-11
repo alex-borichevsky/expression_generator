@@ -1,6 +1,6 @@
 ## Expression generator for expression calculator
 
-Installation:
+## Installation:
 
 ``` go get -u github.com/borichevskiy/expression_generator```
 
