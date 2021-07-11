@@ -2,7 +2,7 @@
 
 ## Installation:
 
-``` go get -u github.com/borichevskiy/expression_generator```
+```go get -u github.com/borichevskiy/expression_generator```
 
 ## Usage:
 
