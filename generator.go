@@ -7,7 +7,7 @@ import (
 )
 
 // length- quantity of operations in expression
-func GenerateExpression(length int) string {
+func Generate(length uint) string {
 	rand.Seed(time.Now().UnixNano())
 	var builder = strings.Builder{}
 
@@ -35,7 +35,7 @@ func GenerateExpression(length int) string {
 	}
 	operand()
 
-	for i := 0; i < length; i++ {
+	for i := 0; uint(i) < length; i++ {
 		operator()
 		operand()
 	}
