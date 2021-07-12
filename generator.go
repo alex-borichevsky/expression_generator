@@ -1,4 +1,4 @@
-package main
+package expression_generator
 
 import (
 	"math/rand"

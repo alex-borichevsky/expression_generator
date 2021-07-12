@@ -1,4 +1,4 @@
-package main
+package expression_generator
 
 import (
 	"github.com/borichevskiy/expression_calculator"
