@@ -1,6 +1,7 @@
 package expression_generator
 
 import (
+	"fmt"
 	"math/rand"
 	"strings"
 	"time"
@@ -20,11 +21,7 @@ func Generate(length uint) string {
 		}
 		return " "
 	}
-	var edger = func(str string) {
-		builder.WriteString(isSpace())
-		builder.WriteString(str)
-		builder.WriteString(isSpace())
-	}
+	edger := func(str string) { fmt.Fprint(&builder, isSpace(), str, isSpace()) }
 	var operand = func() {
 		var operands = "0123456789"
 		edger(generate(operands))
