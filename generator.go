@@ -21,7 +21,8 @@ func Generate(length uint) string {
 		}
 		return " "
 	}
-	edger := func(str string) { fmt.Fprint(&builder, isSpace(), str, isSpace()) }
+	var edger = func(str string) { fmt.Fprint(&builder, isSpace(), str, isSpace()) }
+
 	var operand = func() {
 		var operands = "0123456789"
 		edger(generate(operands))
