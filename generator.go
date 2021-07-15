@@ -9,10 +9,6 @@ import (
 
 // length- quantity of operations in expression
 func Generate(length uint) string {
-	const (
-		operands  = "0123456789"
-		operators = "+-"
-	)
 	rand.Seed(time.Now().UnixNano())
 	var builder = strings.Builder{}
 
@@ -25,14 +21,13 @@ func Generate(length uint) string {
 		}
 		return " "
 	}
-	var edger = func(str string) { fmt.Fprint(&builder, space(), str, space()) }
-
 	var operand = func() {
-		edger(any(operands))
+		fmt.Fprint(&builder, space(), any("0123456789"), space())
 	}
 	var operator = func() {
-		edger(any(operators))
+		fmt.Fprint(&builder, space(), any("+-"), space())
 	}
+
 	operand()
 
 	for i := 0; uint(i) < length; i++ {
